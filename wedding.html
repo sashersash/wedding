@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sophie & James · 14 June 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=EB+Garamond:ital,wght@0,400;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#b8964e;--gold-light:#d4b078;--gold-pale:#f5eedc;--gold-dark:#8a6a2a;
+  --ivory:#fdfaf4;--cream:#f7f2e8;--parchment:#ede6d3;
+  --ink:#1a1612;--ink-mid:#3d342a;--ink-soft:#7a6e5f;--ink-ghost:#b5a896;
+  --sage:#6b8f6e;--sage-light:#a8c5aa;--blush:#d4a5a0;
+  --white:#ffffff;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Cormorant Garamond',serif;background:var(--ivory);color:var(--ink);overflow-x:hidden}
+
+/* ══ LANG TOGGLE ══ */
+.lang-toggle{position:fixed;top:1rem;right:1.5rem;z-index:500}
+.lang-btn{font-family:'Jost',sans-serif;font-size:.65rem;font-weight:300;letter-spacing:.2em;text-transform:uppercase;border:1px solid rgba(184,150,78,.4);background:rgba(253,250,244,.9);color:var(--ink-soft);cursor:pointer;padding:.35rem .9rem;border-radius:20px;display:flex;align-items:center;gap:.4rem;transition:all .25s;backdrop-filter:blur(10px)}
+.lang-btn:hover{border-color:var(--gold);color:var(--gold-dark)}
+
+/* ══ NAV ══ */
+nav{position:fixed;top:0;left:0;right:0;z-index:400;display:flex;justify-content:center;align-items:center;gap:3rem;padding:1.1rem 6rem;background:rgba(253,250,244,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(184,150,78,.15)}
+nav a{font-family:'Jost',sans-serif;font-size:.62rem;font-weight:300;letter-spacing:.25em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;transition:color .3s}
+nav a:hover{color:var(--gold)}
+@media(max-width:700px){nav{gap:1rem;padding:1rem 1rem;flex-wrap:wrap;font-size:.55rem}}
+
+/* ══ HERO ══ */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--ink)}
+.hero-canvas{position:absolute;inset:0;width:100%;height:100%}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,22,18,.55) 0%,rgba(26,22,18,.35) 40%,rgba(26,22,18,.7) 100%)}
+.hero-content{position:relative;z-index:2;text-align:center;padding:2rem;max-width:700px}
+.hero-pre{font-family:'Jost',sans-serif;font-size:.62rem;font-weight:200;letter-spacing:.4em;text-transform:uppercase;color:var(--gold-light);margin-bottom:2.5rem;animation:fadeUp 1.2s ease both}
+.hero-names{font-size:clamp(3rem,9vw,7rem);font-weight:300;line-height:1;color:var(--white);letter-spacing:.02em;animation:fadeUp 1.2s ease .2s both}
+.hero-names em{font-style:italic;color:var(--gold-light)}
+.hero-amp{display:block;font-style:italic;font-size:clamp(2rem,5vw,3.5rem);color:var(--gold-light);line-height:1.2;margin:.2rem 0}
+.hero-rule{display:flex;align-items:center;justify-content:center;gap:1.2rem;margin:2.2rem auto;animation:fadeUp 1.2s ease .4s both}
+.hero-rule-line{flex:1;max-width:90px;height:1px;background:rgba(212,176,120,.4)}
+.hero-rule svg{opacity:.7}
+.hero-date{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:300;letter-spacing:.18em;color:rgba(255,255,255,.8);animation:fadeUp 1.2s ease .5s both}
+.hero-loc{font-family:'Jost',sans-serif;font-size:.62rem;font-weight:200;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-light);margin-top:.5rem;animation:fadeUp 1.2s ease .6s both}
+
+/* Countdown */
+.hero-countdown{display:flex;gap:2.5rem;justify-content:center;margin-top:3rem;animation:fadeUp 1.2s ease .8s both}
+.cd-unit{text-align:center}
+.cd-num{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:300;color:var(--white);line-height:1;min-width:2.5ch;display:block}
+.cd-label{font-family:'Jost',sans-serif;font-size:.52rem;font-weight:200;letter-spacing:.25em;text-transform:uppercase;color:var(--gold-light);margin-top:.3rem;display:block}
+.cd-sep{font-size:2rem;color:rgba(212,176,120,.4);padding-top:.3rem}
+
+.hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.7rem;animation:fadeUp 1.5s ease 1.2s both}
+.hero-scroll span{font-family:'Jost',sans-serif;font-size:.55rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+.scroll-line{width:1px;height:48px;background:linear-gradient(to bottom,rgba(212,176,120,.5),transparent);animation:scrollPulse 2.5s ease-in-out infinite}
+
+/* ══ SECTIONS ══ */
+section{padding:8rem 2rem;position:relative}
+.s-inner{max-width:900px;margin:0 auto}
+.s-wide{max-width:1200px;margin:0 auto}
+.s-label{font-family:'Jost',sans-serif;font-size:.6rem;font-weight:300;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
+.s-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:300;color:var(--ink);line-height:1.15;margin-bottom:1.8rem}
+.s-title em{font-style:italic;color:var(--ink-mid)}
+.s-body{font-size:1.2rem;font-weight:300;line-height:2;color:var(--ink-soft);max-width:560px}
+.s-rule{width:60px;height:1px;background:var(--gold-light);margin:2rem 0}
+
+/* ══ DETAILS ══ */
+.details-bg{background:var(--cream)}
+.details-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5px;margin-top:4rem;border:1.5px solid var(--gold-pale)}
+.d-card{padding:2.5rem 2rem;background:var(--white);border:1.5px solid var(--gold-pale);position:relative;transition:background .3s}
+.d-card:hover{background:var(--gold-pale)}
+.d-card-num{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:300;color:var(--gold-pale);line-height:1;position:absolute;top:1.2rem;right:1.5rem;user-select:none}
+.d-card-label{font-family:'Jost',sans-serif;font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem}
+.d-card-val{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;color:var(--ink);line-height:1.35;margin-bottom:.5rem}
+.d-card-sub{font-size:.95rem;font-weight:300;color:var(--ink-soft);line-height:1.7}
+
+/* ══ PROGRAMME ══ */
+.prog-bg{background:var(--ivory)}
+.prog-days{margin-top:3.5rem}
+.prog-day{display:grid;grid-template-columns:160px 1fr;gap:0 4rem;padding:3rem 0;border-top:1px solid var(--gold-pale)}
+.prog-day:last-child{border-bottom:1px solid var(--gold-pale)}
+.prog-day-left{}
+.prog-day-tag{font-family:'Jost',sans-serif;font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
+.prog-day-name{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:var(--ink-soft);line-height:1}
+.prog-day-date{font-family:'Jost',sans-serif;font-size:.7rem;letter-spacing:.12em;color:var(--ink-ghost);margin-top:.4rem}
+.prog-day-title{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-style:italic;font-weight:400;color:var(--ink);margin-bottom:1.5rem}
+.prog-events{list-style:none}
+.prog-events li{display:flex;gap:1.5rem;padding:.55rem 0;border-bottom:1px solid rgba(184,150,78,.07);font-size:1.05rem;font-weight:300;color:var(--ink-soft);line-height:1.5}
+.prog-events li:last-child{border:none}
+.prog-time{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.12em;color:var(--gold);min-width:55px;padding-top:.2rem;flex-shrink:0}
+@media(max-width:640px){.prog-day{grid-template-columns:1fr;gap:1.5rem 0}}
+
+/* ══ MOOD / INSPO ══ */
+.mood-bg{background:var(--ink);padding:6rem 2rem}
+.mood-inner{max-width:1100px;margin:0 auto}
+.mood-label{font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
+.mood-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:300;color:var(--white);margin-bottom:.5rem}
+.mood-title em{font-style:italic;color:var(--gold-light)}
+.mood-sub{font-family:'Jost',sans-serif;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:3rem}
+.mood-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto auto;gap:1rem}
+.mood-item{position:relative;overflow:hidden;border-radius:2px}
+.mood-item:nth-child(1){grid-row:1/3}
+.mood-item:nth-child(4){grid-column:2/4}
+.mood-item svg{width:100%;display:block}
+.mood-caption{position:absolute;bottom:0;left:0;right:0;padding:1.2rem 1rem .9rem;background:linear-gradient(to top,rgba(26,22,18,.75),transparent);font-family:'Jost',sans-serif;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+@media(max-width:640px){.mood-grid{grid-template-columns:1fr 1fr}.mood-item:nth-child(1){grid-row:auto}.mood-item:nth-child(4){grid-column:auto}}
+
+/* ══ COLOUR PALETTE ══ */
+.palette-bg{background:var(--cream)}
+.palette-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:2rem;margin-top:3.5rem}
+.palette-item{text-align:center}
+.palette-swatch{width:80px;height:80px;border-radius:50%;margin:0 auto 1rem;box-shadow:0 4px 20px rgba(0,0,0,.08);transition:transform .25s}
+.palette-swatch:hover{transform:scale(1.1)}
+.palette-name{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:.2rem}
+.palette-hex{font-family:'Jost',sans-serif;font-size:.58rem;letter-spacing:.1em;color:var(--ink-ghost)}
+.palette-desc{font-size:.95rem;font-weight:300;color:var(--ink-soft);margin-top:.4rem;line-height:1.5}
+
+/* ══ DRESS SILHOUETTES ══ */
+.dress-bg{background:var(--ivory)}
+.dress-intro{font-size:1.15rem;font-weight:300;line-height:1.9;color:var(--ink-soft);max-width:600px;margin-bottom:3.5rem}
+.dress-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:2rem;margin-bottom:3.5rem}
+.dress-card{text-align:center}
+.dress-card svg{width:100%;max-width:140px;margin:0 auto;display:block;filter:drop-shadow(0 4px 16px rgba(0,0,0,.06))}
+.dress-card-name{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:var(--ink);margin:1.1rem 0 .3rem}
+.dress-card-sub{font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-ghost)}
+.avoid-box{background:var(--white);border:1px solid var(--gold-pale);padding:2rem;margin-top:1rem;max-width:600px}
+.avoid-box h4{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.avoid-list{list-style:none}
+.avoid-list li{font-size:1rem;font-weight:300;color:var(--ink-soft);padding:.4rem 0;border-bottom:1px solid var(--gold-pale);display:flex;gap:.8rem;line-height:1.5}
+.avoid-list li::before{content:'—';color:var(--gold-light);flex-shrink:0}
+.avoid-list li:last-child{border:none}
+
+/* Pack list */
+.pack-bg{background:var(--cream)}
+.pack-cols{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:2.5rem}
+@media(max-width:640px){.pack-cols{grid-template-columns:1fr}}
+.pack-list{list-style:none}
+.pack-list li{font-size:1.05rem;font-weight:300;color:var(--ink-soft);padding:.55rem 0;border-bottom:1px solid rgba(184,150,78,.12);display:flex;gap:.8rem;line-height:1.6}
+.pack-list li::before{content:'✦';color:var(--gold-light);font-size:.6rem;margin-top:.35rem;flex-shrink:0}
+.pack-list li:last-child{border:none}
+
+/* ══ LOCATION ══ */
+.location-bg{background:var(--ivory)}
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;margin-top:3.5rem;align-items:start}
+@media(max-width:700px){.loc-grid{grid-template-columns:1fr;gap:2.5rem}}
+.loc-map{background:var(--cream);border:1px solid var(--gold-pale);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.loc-address{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:var(--ink);line-height:1.6;margin-bottom:2rem}
+.loc-section h4{font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem;margin-top:1.8rem}
+.loc-section h4:first-child{margin-top:0}
+.loc-section p{font-size:1rem;font-weight:300;color:var(--ink-soft);line-height:1.8;margin-bottom:.5rem}
+
+/* ══ PHOTOS ══ */
+.photos-bg{background:var(--cream)}
+.photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:3rem}
+@media(max-width:640px){.photo-grid{grid-template-columns:1fr 1fr}.photo-item:nth-child(1){grid-column:1/-1}}
+.photo-item{overflow:hidden;position:relative;background:var(--parchment)}
+.photo-item:nth-child(1){grid-row:1/3}
+.photo-item:nth-child(4){grid-column:2/4}
+.photo-ph{width:100%;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.photo-item:nth-child(1) .photo-ph{aspect-ratio:3/5}
+.photo-item:nth-child(4) .photo-ph{aspect-ratio:16/7}
+.photo-ph{aspect-ratio:3/4}
+.photo-ph-label{position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);font-family:'Jost',sans-serif;font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.6);white-space:nowrap;z-index:2}
+
+/* ══ ACCOMMODATION ══ */
+.accom-bg{background:var(--ivory)}
+.accom-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;margin-top:3rem}
+.accom-card{background:var(--white);border:1px solid var(--gold-pale);overflow:hidden;transition:transform .3s,box-shadow .3s}
+.accom-card:hover{transform:translateY(-5px);box-shadow:0 20px 60px rgba(184,150,78,.1)}
+.accom-img{height:140px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.accom-body{padding:1.6rem}
+.accom-type{font-family:'Jost',sans-serif;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+.accom-name{font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--ink);margin-bottom:.5rem}
+.accom-desc{font-size:.95rem;font-weight:300;color:var(--ink-soft);line-height:1.7;margin-bottom:.8rem}
+.accom-dist{font-family:'Jost',sans-serif;font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)}
+
+/* ══ FOOTER ══ */
+footer{background:var(--ink);padding:7rem 2rem;text-align:center;position:relative;overflow:hidden}
+footer::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 110%,rgba(184,150,78,.12),transparent 65%)}
+.ft-inner{position:relative;z-index:1}
+.ft-mono{font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem}
+.ft-names{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,7vw,5rem);font-style:italic;font-weight:300;color:var(--white);line-height:1;margin-bottom:1.5rem}
+.ft-date{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:3rem}
+.ft-note{font-size:1.1rem;font-weight:300;font-style:italic;color:rgba(255,255,255,.4);line-height:1.9}
+.ft-contact{margin-top:3.5rem;font-family:'Jost',sans-serif;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.18)}
+
+/* ══ ANIMATIONS ══ */
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes scrollPulse{0%,100%{opacity:.3}50%{opacity:.8}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s ease}
+.reveal.visible{opacity:1;transform:none}
+.rd1{transition-delay:.1s}.rd2{transition-delay:.22s}.rd3{transition-delay:.34s}.rd4{transition-delay:.46s}
+
+/* ══ GOLD DIVIDER ══ */
+.gold-divider{display:flex;align-items:center;gap:1.2rem;margin:2rem 0}
+.gold-divider-line{flex:1;height:1px;background:var(--gold-pale)}
+.gold-divider-diamond{width:6px;height:6px;background:var(--gold-light);transform:rotate(45deg);flex-shrink:0}
+</style>
+</head>
+<body>
+
+<!-- LANG TOGGLE -->
+<div class="lang-toggle">
+  <button class="lang-btn" id="langBtn" onclick="toggleLang()">
+    <span id="langFlag">🇷🇺</span><span id="langLabel">RU</span>
+  </button>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#details" data-en="Details" data-ru="Детали">Details</a>
+  <a href="#programme" data-en="Programme" data-ru="Программа">Programme</a>
+  <a href="#dresscode" data-en="Dress Code" data-ru="Дресс-код">Dress Code</a>
+  <a href="#location" data-en="Location" data-ru="Место">Location</a>
+  <a href="#photos" data-en="Photos" data-ru="Фото">Photos</a>
+  <a href="#stay" data-en="Stay" data-ru="Отель">Stay</a>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <!-- Painted canvas background -->
+  <svg class="hero-canvas" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <radialGradient id="rg1" cx="20%" cy="30%" r="60%"><stop offset="0%" stop-color="#2a1f0f" stop-opacity=".9"/><stop offset="100%" stop-color="#1a1612"/></radialGradient>
+      <radialGradient id="rg2" cx="80%" cy="70%" r="55%"><stop offset="0%" stop-color="#3d2e0e" stop-opacity=".6"/><stop offset="100%" stop-color="#1a1612" stop-opacity="0"/></radialGradient>
+      <filter id="blur1"><feGaussianBlur stdDeviation="35"/></filter>
+      <filter id="blur2"><feGaussianBlur stdDeviation="20"/></filter>
+    </defs>
+    <rect width="1440" height="900" fill="url(#rg1)"/>
+    <rect width="1440" height="900" fill="url(#rg2)"/>
+    <!-- Warm light pools -->
+    <ellipse cx="200" cy="200" rx="350" ry="250" fill="#b8964e" opacity=".07" filter="url(#blur1)"/>
+    <ellipse cx="1200" cy="700" rx="320" ry="220" fill="#d4b078" opacity=".08" filter="url(#blur1)"/>
+    <ellipse cx="720" cy="450" rx="280" ry="200" fill="#8a6a2a" opacity=".06" filter="url(#blur1)"/>
+    <!-- Botanical silhouettes top-left -->
+    <g opacity=".18" transform="translate(0,0)">
+      <path d="M-20 0 C30 80 80 60 60 180 C40 300 -10 320 20 420" stroke="#c9a87c" stroke-width="1.5" fill="none"/>
+      <path d="M60 180 C90 150 140 145 170 120" fill="#a07850" opacity=".6"/>
+      <path d="M60 180 C30 165 0 175 -20 155" fill="#c9a87c" opacity=".5"/>
+      <path d="M20 420 C50 390 90 380 110 355" fill="#b5cdb8" opacity=".4"/>
+      <path d="M20 420 C-5 405 -30 415 -50 395" fill="#c9a87c" opacity=".5"/>
+      <circle cx="170" cy="118" r="6" fill="#e8c4b8" opacity=".7"/>
+      <circle cx="110" cy="353" r="5" fill="#e8c4b8" opacity=".6"/>
+    </g>
+    <!-- Botanical silhouettes bottom-right -->
+    <g opacity=".18" transform="translate(1440,900) rotate(180)">
+      <path d="M-20 0 C30 80 80 60 60 180 C40 300 -10 320 20 420" stroke="#c9a87c" stroke-width="1.5" fill="none"/>
+      <path d="M60 180 C90 150 140 145 170 120" fill="#a07850" opacity=".6"/>
+      <path d="M60 180 C30 165 0 175 -20 155" fill="#c9a87c" opacity=".5"/>
+      <path d="M20 420 C50 390 90 380 110 355" fill="#b5cdb8" opacity=".4"/>
+      <path d="M20 420 C-5 405 -30 415 -50 395" fill="#c9a87c" opacity=".5"/>
+      <circle cx="170" cy="118" r="6" fill="#e8c4b8" opacity=".7"/>
+      <circle cx="110" cy="353" r="5" fill="#e8c4b8" opacity=".6"/>
+    </g>
+    <!-- Fine gold grain texture overlay -->
+    <rect width="1440" height="900" fill="url(#rg2)" opacity=".3"/>
+  </svg>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <p class="hero-pre" data-en="We are getting married" data-ru="Мы женимся">We are getting married</p>
+    <div class="hero-names">
+      <span>Sophie</span>
+      <span class="hero-amp">&amp;</span>
+      <span>James</span>
+    </div>
+    <div class="hero-rule">
+      <div class="hero-rule-line"></div>
+      <svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 0L8.5 5.5L14 7L8.5 8.5L7 14L5.5 8.5L0 7L5.5 5.5Z" fill="#d4b078"/></svg>
+      <div class="hero-rule-line"></div>
+    </div>
+    <p class="hero-date" data-en="Saturday · 14 June 2025" data-ru="Суббота · 14 июня 2025">Saturday · 14 June 2025</p>
+    <p class="hero-loc" data-en="Rosewood Estate · Yarra Valley" data-ru="Поместье Розвуд · Долина Ярра">Rosewood Estate · Yarra Valley</p>
+    <div class="hero-countdown">
+      <div class="cd-unit"><span class="cd-num" id="cd-d">00</span><span class="cd-label" data-en="Days" data-ru="Дней">Days</span></div>
+      <span class="cd-sep">·</span>
+      <div class="cd-unit"><span class="cd-num" id="cd-h">00</span><span class="cd-label" data-en="Hours" data-ru="Часов">Hours</span></div>
+      <span class="cd-sep">·</span>
+      <div class="cd-unit"><span class="cd-num" id="cd-m">00</span><span class="cd-label" data-en="Minutes" data-ru="Минут">Minutes</span></div>
+      <span class="cd-sep">·</span>
+      <div class="cd-unit"><span class="cd-num" id="cd-s">00</span><span class="cd-label" data-en="Seconds" data-ru="Секунд">Seconds</span></div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span data-en="Scroll" data-ru="Листать">Scroll</span>
+  </div>
+</section>
+
+<!-- ══ DETAILS ══ -->
+<section id="details" class="details-bg">
+  <div class="s-inner">
+    <p class="s-label reveal" data-en="The Details" data-ru="Основное">The Details</p>
+    <h2 class="s-title reveal rd1" data-en="Everything you need to know" data-ru="Всё, что нужно знать">Everything you<br><em>need to know</em></h2>
+    <div class="details-grid reveal rd2">
+      <div class="d-card">
+        <span class="d-card-num">01</span>
+        <p class="d-card-label" data-en="Date" data-ru="Дата">Date</p>
+        <p class="d-card-val" data-en="Saturday 14 June 2025" data-ru="Суббота, 14 июня 2025">Saturday<br>14 June 2025</p>
+        <p class="d-card-sub" data-en="Long weekend — plan to stay!" data-ru="Длинные выходные — оставайтесь!">Long weekend — plan to stay!</p>
+      </div>
+      <div class="d-card">
+        <span class="d-card-num">02</span>
+        <p class="d-card-label" data-en="Ceremony" data-ru="Церемония">Ceremony</p>
+        <p class="d-card-val">3:00 pm</p>
+        <p class="d-card-sub" data-en="Seated by 2:45 pm please · Celebrations until midnight" data-ru="Просим занять места к 14:45 · Праздник до полуночи">Seated by 2:45 pm please · Celebrations until midnight</p>
+      </div>
+      <div class="d-card">
+        <span class="d-card-num">03</span>
+        <p class="d-card-label" data-en="Venue" data-ru="Место">Venue</p>
+        <p class="d-card-val" data-en="Rosewood Estate" data-ru="Поместье Розвуд">Rosewood Estate</p>
+        <p class="d-card-sub">123 Vineyard Lane<br>Yarra Valley, VIC 3770</p>
+      </div>
+      <div class="d-card">
+        <span class="d-card-num">04</span>
+        <p class="d-card-label" data-en="Dress Code" data-ru="Дресс-код">Dress Code</p>
+        <p class="d-card-val" data-en="Garden Formal" data-ru="Садовый формальный">Garden Formal</p>
+        <p class="d-card-sub" data-en="Earthy tones · Florals welcome · Flats recommended" data-ru="Земляные тона · Цветочные принты · Устойчивые каблуки">Earthy tones · Florals welcome · Flats recommended</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROGRAMME ══ -->
+<section id="programme" class="prog-bg">
+  <div class="s-inner">
+    <p class="s-label reveal" data-en="Three days of celebrating" data-ru="Три дня праздника">Three days of celebrating</p>
+    <h2 class="s-title reveal rd1" data-en="The Programme" data-ru="Программа">The <em>Programme</em></h2>
+    <p class="s-body reveal rd2" data-en="Come for it all or just the day — we're so glad you'll be with us." data-ru="Приезжайте на все три дня или только на день свадьбы — мы рады вам в любом случае.">Come for it all or just the day — we're so glad you'll be with us.</p>
+    <div class="prog-days reveal rd3">
+      <!-- Day 1 -->
+      <div class="prog-day">
+        <div class="prog-day-left">
+          <p class="prog-day-tag" data-en="Day One" data-ru="День первый">Day One</p>
+          <p class="prog-day-name" data-en="Friday" data-ru="Пятница">Friday</p>
+          <p class="prog-day-date">13 Jun</p>
+        </div>
+        <div>
+          <p class="prog-day-title" data-en="Welcome Evening" data-ru="Приветственный вечер">Welcome Evening</p>
+          <ul class="prog-events">
+            <li><span class="prog-time">16:00</span><span data-en="Arrive & check in" data-ru="Приезд и заселение">Arrive &amp; check in</span></li>
+            <li><span class="prog-time">18:30</span><span data-en="Welcome drinks — cellar door" data-ru="Приветственные напитки — погреб">Welcome drinks — cellar door</span></li>
+            <li><span class="prog-time">19:30</span><span data-en="Casual dinner — long table in the garden" data-ru="Ужин в саду — общий стол">Casual dinner — long table in the garden</span></li>
+            <li><span class="prog-time">22:00</span><span data-en="Evening free to settle in" data-ru="Свободный вечер">Evening free to settle in</span></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Day 2 -->
+      <div class="prog-day">
+        <div class="prog-day-left">
+          <p class="prog-day-tag" data-en="Day Two" data-ru="День второй">Day Two</p>
+          <p class="prog-day-name" data-en="Saturday" data-ru="Суббота">Saturday</p>
+          <p class="prog-day-date">14 Jun</p>
+        </div>
+        <div>
+          <p class="prog-day-title" data-en="The Wedding Day" data-ru="День свадьбы">The Wedding Day</p>
+          <ul class="prog-events">
+            <li><span class="prog-time">11:00</span><span data-en="Morning free — explore the valley" data-ru="Свободное утро">Morning free — explore the valley</span></li>
+            <li><span class="prog-time">14:45</span><span data-en="Guests seated for ceremony" data-ru="Гости занимают места">Guests seated for ceremony</span></li>
+            <li><span class="prog-time">15:00</span><span data-en="Ceremony — garden lawn" data-ru="Церемония — сад">Ceremony — garden lawn</span></li>
+            <li><span class="prog-time">16:00</span><span data-en="Cocktail hour — terrace & rose garden" data-ru="Коктейльный час — терраса">Cocktail hour — terrace &amp; rose garden</span></li>
+            <li><span class="prog-time">18:00</span><span data-en="Dinner & dancing — heritage barn" data-ru="Ужин и танцы — амбар">Dinner &amp; dancing — heritage barn</span></li>
+            <li><span class="prog-time">00:00</span><span data-en="Carriages — shuttle service provided" data-ru="Развоз — шаттл">Carriages — shuttle service provided</span></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Day 3 -->
+      <div class="prog-day">
+        <div class="prog-day-left">
+          <p class="prog-day-tag" data-en="Day Three" data-ru="День третий">Day Three</p>
+          <p class="prog-day-name" data-en="Sunday" data-ru="Воскресенье">Sunday</p>
+          <p class="prog-day-date">15 Jun</p>
+        </div>
+        <div>
+          <p class="prog-day-title" data-en="Farewell Brunch" data-ru="Прощальный бранч">Farewell Brunch</p>
+          <ul class="prog-events">
+            <li><span class="prog-time">10:00</span><span data-en="Farewell brunch — poolside terrace" data-ru="Бранч у бассейна">Farewell brunch — poolside terrace</span></li>
+            <li><span class="prog-time">12:00</span><span data-en="Checkout from accommodation" data-ru="Выезд">Checkout from accommodation</span></li>
+            <li><span class="prog-time" data-en="Aft." data-ru="День">Aft.</span><span data-en="Optional winery tour for those who linger" data-ru="Экскурсия на винодельню">Optional winery tour for those who linger</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MOOD / INSPO ══ -->
+<section class="mood-bg">
+  <div class="mood-inner">
+    <p class="mood-label reveal" data-en="The Aesthetic" data-ru="Эстетика">The Aesthetic</p>
+    <h2 class="mood-title reveal rd1" data-en="Mood & Inspiration" data-ru="Настроение и вдохновение">Mood &amp; <em>Inspiration</em></h2>
+    <p class="mood-sub reveal rd2" data-en="The world we're creating for our day" data-ru="Атмосфера, которую мы создаём">The world we're creating for our day</p>
+    <div class="mood-grid reveal rd2">
+
+      <!-- Tall left: vineyard golden hour -->
+      <div class="mood-item">
+        <svg viewBox="0 0 320 520" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Vineyard at golden hour">
+          <rect width="320" height="520" fill="#1c1208"/>
+          <ellipse cx="160" cy="160" rx="200" ry="160" fill="#c9871e" opacity=".25" filter="url(#blur1)"/>
+          <ellipse cx="280" cy="80" rx="140" ry="100" fill="#e8a730" opacity=".2"/>
+          <!-- Sky gradient -->
+          <rect width="320" height="260" fill="url(#skyGrad)"/>
+          <defs>
+            <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#c97c1a" stop-opacity=".6"/>
+              <stop offset="60%" stop-color="#8b4513" stop-opacity=".3"/>
+              <stop offset="100%" stop-color="#1c1208" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="groundGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#2a1f08"/>
+              <stop offset="100%" stop-color="#1c1208"/>
+            </linearGradient>
+          </defs>
+          <!-- Ground -->
+          <rect y="260" width="320" height="260" fill="url(#groundGrad)"/>
+          <!-- Vineyard rows -->
+          <g opacity=".5">
+            <path d="M0 320 Q80 305 160 315 Q240 325 320 310" stroke="#6b8f3e" stroke-width="3" fill="none"/>
+            <path d="M0 345 Q80 330 160 340 Q240 350 320 335" stroke="#6b8f3e" stroke-width="2.5" fill="none"/>
+            <path d="M0 370 Q80 355 160 365 Q240 375 320 360" stroke="#6b8f3e" stroke-width="2" fill="none"/>
+            <path d="M0 392 Q80 377 160 387 Q240 397 320 382" stroke="#5a7a30" stroke-width="1.5" fill="none"/>
+            <path d="M0 410 Q80 396 160 405 Q240 414 320 400" stroke="#4a6525" stroke-width="1.2" fill="none"/>
+            <path d="M0 425 Q80 412 160 420 Q240 428 320 415" stroke="#3d5520" stroke-width="1" fill="none" opacity=".7"/>
+          </g>
+          <!-- Silhouette tree left -->
+          <path d="M30 260 Q30 200 28 150" stroke="#1a0f05" stroke-width="4" fill="none"/>
+          <ellipse cx="30" cy="145" rx="22" ry="30" fill="#1a0f05"/>
+          <ellipse cx="18" cy="165" rx="15" ry="20" fill="#1a0f05"/>
+          <ellipse cx="42" cy="160" rx="14" ry="22" fill="#1a0f05"/>
+          <!-- Silhouette tree right -->
+          <path d="M280 260 Q280 195 278 140" stroke="#1a0f05" stroke-width="3.5" fill="none"/>
+          <ellipse cx="280" cy="135" rx="20" ry="28" fill="#1a0f05"/>
+          <ellipse cx="268" cy="152" rx="13" ry="18" fill="#1a0f05"/>
+          <ellipse cx="292" cy="148" rx="13" ry="20" fill="#1a0f05"/>
+          <!-- Sun glow -->
+          <circle cx="180" cy="80" r="28" fill="#e8a730" opacity=".4"/>
+          <circle cx="180" cy="80" r="16" fill="#f0c050" opacity=".5"/>
+          <!-- Foreground flowers -->
+          <g opacity=".6">
+            <circle cx="45" cy="455" r="5" fill="#d4a5a0"/>
+            <circle cx="55" cy="448" r="4" fill="#c49090"/>
+            <circle cx="38" cy="448" r="3.5" fill="#e8c4b8"/>
+            <circle cx="220" cy="460" r="5" fill="#d4a5a0"/>
+            <circle cx="230" cy="453" r="4" fill="#c49090"/>
+          </g>
+        </svg>
+        <div class="mood-caption" data-en="Golden Hour · Yarra Valley" data-ru="Золотой час · Долина Ярра">Golden Hour · Yarra Valley</div>
+      </div>
+
+      <!-- Top centre: floral close-up -->
+      <div class="mood-item">
+        <svg viewBox="0 0 280 240" fill="none" aria-label="Floral bouquet">
+          <rect width="280" height="240" fill="#2a1f14"/>
+          <defs>
+            <radialGradient id="flG" cx="50%" cy="50%" r="60%">
+              <stop offset="0%" stop-color="#f5ede0" stop-opacity=".15"/>
+              <stop offset="100%" stop-color="#1a1208" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="280" height="240" fill="url(#flG)"/>
+          <!-- Large rose -->
+          <g transform="translate(130,120)">
+            <ellipse cx="0" cy="0" rx="38" ry="35" fill="#8b3a3a" opacity=".8"/>
+            <ellipse cx="-5" cy="-8" rx="28" ry="24" fill="#a04444" opacity=".9"/>
+            <ellipse cx="3" cy="-14" rx="18" ry="16" fill="#b55050" opacity=".9"/>
+            <ellipse cx="-2" cy="-18" rx="12" ry="10" fill="#c46060"/>
+            <ellipse cx="1" cy="-22" rx="7" ry="6" fill="#d47070"/>
+            <ellipse cx="0" cy="-24" rx="4" ry="3.5" fill="#e08080"/>
+            <!-- Petals outer -->
+            <path d="M0 0 C-20 10 -38 5 -35 -10 C-32 -25 -15 -30 0 -20Z" fill="#7a2e2e" opacity=".7"/>
+            <path d="M0 0 C20 10 38 5 35 -10 C32 -25 15 -30 0 -20Z" fill="#7a2e2e" opacity=".7"/>
+            <path d="M0 0 C-5 25 -20 38 -30 30 C-40 22 -35 5 -20 0Z" fill="#8b3535" opacity=".6"/>
+            <path d="M0 0 C5 25 20 38 30 30 C40 22 35 5 20 0Z" fill="#8b3535" opacity=".6"/>
+          </g>
+          <!-- Small roses -->
+          <g transform="translate(60,80)">
+            <ellipse cx="0" cy="0" rx="22" ry="20" fill="#c9897a" opacity=".8"/>
+            <ellipse cx="-2" cy="-5" rx="15" ry="13" fill="#d4a090"/>
+            <ellipse cx="1" cy="-9" rx="9" ry="8" fill="#e8b8ac"/>
+            <path d="M0 0 C-12 8 -22 4 -20 -7 C-18 -18 -8 -20 0 -12Z" fill="#b87870" opacity=".7"/>
+            <path d="M0 0 C12 8 22 4 20 -7 C18 -18 8 -20 0 -12Z" fill="#b87870" opacity=".7"/>
+          </g>
+          <g transform="translate(210,155)">
+            <ellipse cx="0" cy="0" rx="20" ry="18" fill="#c9897a" opacity=".75"/>
+            <ellipse cx="-1" cy="-5" rx="13" ry="11" fill="#d4a090"/>
+            <ellipse cx="0" cy="-8" rx="8" ry="7" fill="#e8b8ac"/>
+          </g>
+          <!-- Greenery / eucalyptus -->
+          <path d="M80 220 C90 180 100 140 120 100" stroke="#4a6e3e" stroke-width="1.5" fill="none"/>
+          <ellipse cx="95" cy="170" rx="12" ry="8" fill="#4a6e3e" opacity=".6" transform="rotate(-20 95 170)"/>
+          <ellipse cx="105" cy="145" rx="11" ry="7" fill="#5a8048" opacity=".55" transform="rotate(-30 105 145)"/>
+          <ellipse cx="112" cy="118" rx="10" ry="6.5" fill="#4a6e3e" opacity=".5" transform="rotate(-15 112 118)"/>
+          <path d="M200 220 C195 175 185 130 170 90" stroke="#3d5a30" stroke-width="1.5" fill="none"/>
+          <ellipse cx="192" cy="175" rx="11" ry="7" fill="#4a6e3e" opacity=".55" transform="rotate(25 192 175)"/>
+          <ellipse cx="183" cy="145" rx="10" ry="6.5" fill="#5a8048" opacity=".5" transform="rotate(18 183 145)"/>
+          <!-- Baby's breath -->
+          <g opacity=".5">
+            <circle cx="155" cy="70" r="3" fill="#f5ede0"/>
+            <circle cx="165" cy="65" r="2.5" fill="#f5ede0"/>
+            <circle cx="145" cy="68" r="2" fill="#ede0cc"/>
+            <circle cx="170" cy="75" r="2" fill="#f5ede0"/>
+            <circle cx="150" cy="58" r="2.5" fill="#ede0cc"/>
+            <circle cx="75" cy="48" r="2.5" fill="#f5ede0"/>
+            <circle cx="68" cy="42" r="2" fill="#ede0cc"/>
+            <circle cx="82" cy="44" r="2" fill="#f5ede0"/>
+          </g>
+        </svg>
+        <div class="mood-caption" data-en="Florals · Garden Roses &amp; Eucalyptus" data-ru="Цветы · Садовые розы и эвкалипт">Florals · Garden Roses &amp; Eucalyptus</div>
+      </div>
+
+      <!-- Top right: ceremony arch -->
+      <div class="mood-item">
+        <svg viewBox="0 0 280 240" fill="none" aria-label="Wedding ceremony arch">
+          <rect width="280" height="240" fill="#e8f0e5"/>
+          <defs>
+            <linearGradient id="archSky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#c8dfc8" stop-opacity=".5"/>
+              <stop offset="100%" stop-color="#e8f0e5" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <rect width="280" height="240" fill="url(#archSky)"/>
+          <!-- Grass -->
+          <ellipse cx="140" cy="230" rx="180" ry="30" fill="#7a9e5e" opacity=".3"/>
+          <!-- Arch structure -->
+          <path d="M80 220 L80 80 Q80 30 140 30 Q200 30 200 80 L200 220" stroke="#5a3e20" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <!-- Left foliage -->
+          <g opacity=".85">
+            <ellipse cx="68" cy="140" rx="28" ry="18" fill="#5a8040" transform="rotate(-20 68 140)"/>
+            <ellipse cx="58" cy="118" rx="22" ry="15" fill="#4a6e30" transform="rotate(-30 58 118)"/>
+            <ellipse cx="72" cy="100" rx="24" ry="16" fill="#6a9050" transform="rotate(-10 72 100)"/>
+            <ellipse cx="60" cy="82" rx="20" ry="14" fill="#5a8040" transform="rotate(-25 60 82)"/>
+            <ellipse cx="78" cy="68" rx="22" ry="15" fill="#4a6e30" transform="rotate(-5 78 68)"/>
+            <ellipse cx="68" cy="52" rx="18" ry="12" fill="#6a9050" transform="rotate(-15 68 52)"/>
+            <!-- Flowers on arch left -->
+            <circle cx="52" cy="95" r="6" fill="#e8c4b8"/>
+            <circle cx="52" cy="95" r="3.5" fill="#d4a090"/>
+            <circle cx="70" cy="60" r="5" fill="#f0d4c8"/>
+            <circle cx="70" cy="60" r="3" fill="#e8b8a8"/>
+            <circle cx="45" cy="125" r="5" fill="#e8c4b8"/>
+            <circle cx="45" cy="125" r="3" fill="#d4a090"/>
+          </g>
+          <!-- Right foliage -->
+          <g opacity=".85">
+            <ellipse cx="212" cy="140" rx="28" ry="18" fill="#5a8040" transform="rotate(20 212 140)"/>
+            <ellipse cx="222" cy="118" rx="22" ry="15" fill="#4a6e30" transform="rotate(30 222 118)"/>
+            <ellipse cx="208" cy="100" rx="24" ry="16" fill="#6a9050" transform="rotate(10 208 100)"/>
+            <ellipse cx="220" cy="82" rx="20" ry="14" fill="#5a8040" transform="rotate(25 220 82)"/>
+            <ellipse cx="202" cy="68" rx="22" ry="15" fill="#4a6e30" transform="rotate(5 202 68)"/>
+            <ellipse cx="212" cy="52" rx="18" ry="12" fill="#6a9050" transform="rotate(15 212 52)"/>
+            <circle cx="228" cy="95" r="6" fill="#e8c4b8"/>
+            <circle cx="228" cy="95" r="3.5" fill="#d4a090"/>
+            <circle cx="210" cy="60" r="5" fill="#f0d4c8"/>
+            <circle cx="210" cy="60" r="3" fill="#e8b8a8"/>
+            <circle cx="235" cy="125" r="5" fill="#e8c4b8"/>
+            <circle cx="235" cy="125" r="3" fill="#d4a090"/>
+          </g>
+          <!-- Arch top foliage -->
+          <ellipse cx="140" cy="35" rx="55" ry="25" fill="#5a8040" opacity=".7"/>
+          <ellipse cx="120" cy="28" rx="35" ry="20" fill="#4a6e30" opacity=".7"/>
+          <ellipse cx="160" cy="28" rx="35" ry="20" fill="#6a9050" opacity=".65"/>
+          <circle cx="120" cy="22" r="6" fill="#e8c4b8" opacity=".9"/>
+          <circle cx="120" cy="22" r="3.5" fill="#d4a090"/>
+          <circle cx="158" cy="20" r="6" fill="#f0d4c8" opacity=".9"/>
+          <circle cx="158" cy="20" r="3.5" fill="#e8b8a8"/>
+          <circle cx="140" cy="16" r="5" fill="#e8c4b8" opacity=".8"/>
+          <!-- Couple silhouette -->
+          <g opacity=".18" transform="translate(140,195)">
+            <ellipse cx="-12" cy="-40" rx="9" ry="12" fill="#2a1f14"/><!-- groom -->
+            <rect x="-17" y="-28" width="10" height="28" rx="3" fill="#2a1f14"/>
+            <ellipse cx="12" cy="-40" rx="10" ry="12" fill="#2a1f14"/><!-- bride -->
+            <path d="M2 -28 C-5 -20 -12 0 -8 28 L32 28 C36 0 28 -20 22 -28 Q12 -38 2 -28Z" fill="#2a1f14"/>
+          </g>
+        </svg>
+        <div class="mood-caption" data-en="The Ceremony Arch" data-ru="Арка для церемонии">The Ceremony Arch</div>
+      </div>
+
+      <!-- Wide bottom: table setting -->
+      <div class="mood-item">
+        <svg viewBox="0 0 560 220" fill="none" aria-label="Elegant table setting">
+          <rect width="560" height="220" fill="#f5ede0"/>
+          <defs>
+            <linearGradient id="tableGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#ede0c8" stop-opacity=".6"/>
+              <stop offset="100%" stop-color="#e8d8c0" stop-opacity=".3"/>
+            </linearGradient>
+          </defs>
+          <rect width="560" height="220" fill="url(#tableGrad)"/>
+          <!-- Table cloth -->
+          <rect y="80" width="560" height="140" fill="#faf7f0" opacity=".9"/>
+          <rect y="80" width="560" height="1.5" fill="#d4b878" opacity=".4"/>
+          <!-- Place settings - repeat 4 times -->
+          <!-- Setting 1 -->
+          <g transform="translate(60,100)">
+            <ellipse cx="0" cy="35" rx="32" ry="40" fill="#f5ede0" stroke="#d4b878" stroke-width=".8" opacity=".9"/>
+            <ellipse cx="0" cy="35" rx="22" ry="28" fill="#faf7f2" stroke="#d4b878" stroke-width=".6" opacity=".8"/>
+            <rect x="-38" y="10" width="4" height="50" rx="2" fill="#c8a860" opacity=".6"/><!-- fork -->
+            <rect x="34" y="10" width="4" height="50" rx="2" fill="#c8a860" opacity=".6"/><!-- knife -->
+            <rect x="42" y="10" width="3" height="40" rx="1.5" fill="#c8a860" opacity=".5"/><!-- spoon -->
+            <ellipse cx="28" cy="-8" rx="14" ry="18" fill="none" stroke="#c8a860" stroke-width=".8" opacity=".6"/><!-- wine glass -->
+            <line x1="28" y1="10" x2="28" y2="20" stroke="#c8a860" stroke-width=".8" opacity=".6"/>
+            <ellipse cx="28" cy="22" rx="10" ry="3" fill="none" stroke="#c8a860" stroke-width=".7" opacity=".5"/>
+          </g>
+          <!-- Setting 2 -->
+          <g transform="translate(200,100)">
+            <ellipse cx="0" cy="35" rx="32" ry="40" fill="#f5ede0" stroke="#d4b878" stroke-width=".8" opacity=".9"/>
+            <ellipse cx="0" cy="35" rx="22" ry="28" fill="#faf7f2" stroke="#d4b878" stroke-width=".6" opacity=".8"/>
+            <rect x="-38" y="10" width="4" height="50" rx="2" fill="#c8a860" opacity=".6"/>
+            <rect x="34" y="10" width="4" height="50" rx="2" fill="#c8a860" opacity=".6"/>
+            <ellipse cx="28" cy="-8" rx="14" ry="18" fill="none" stroke="#c8a860" stroke-width=".8" opacity=".6"/>
+            <line x1="28" y1="10" x2="28" y2="20" stroke="#c8a860" stroke-width=".8" opacity=".6"/>
+            <ellipse cx="28" cy="22" rx="10" ry="3" fill="none" stroke="#c8a860" stroke-width=".7" opacity=".5"/>
+          </g>
+          <!-- Setting 3 -->
+          <g transform="translate(360,100)">
+            <ellipse cx="0" cy="35" rx="32" ry="40" fill="#f5ede0" stroke="#d4b878" stroke-width=".8" opacity=".9"/>
+            <ellipse cx="0" cy="35" rx="22" ry="28" fill="#faf7f2" stroke="#d4b878" stroke-width=".6" opacity=".8"/>
+            <rect x="-38" y="10" width="4" height="50" rx="2" fill="#c8a860" opacity=".6"/>
+            <rect x="34" y="10" width="4" height="50" rx="2" fill="#c8a860" opacity=".6"/>
+            <ellipse cx="28" cy="-8" rx="14" ry="18" fill="none" stroke="#c8a860" stroke-width=".8" opacity=".6"/>
+            <line x1="28" y1="10" x2="28" y2="20" stroke="#c8a860" stroke-width=".8" opacity=".6"/>
+            <ellipse cx="28" cy="22" rx="10" ry="3" fill="none" stroke="#c8a860" stroke-width=".7" opacity=".5"/>
+          </g>
+          <!-- Setting 4 -->
+          <g transform="translate(500,100)">
+            <ellipse cx="0" cy="35" rx="32" ry="40" fill="#f5ede0" stroke="#d4b878" stroke-width=".8" opacity=".9"/>
+            <ellipse cx="0" cy="35" rx="22" ry="28" fill="#faf7f2" stroke="#d4b878" stroke-width=".6" opacity=".8"/>
+            <rect x="-38" y="10" width="4" height="50" rx="2" fill="#c8a860" opacity=".6"/>
+            <rect x="34" y="10" width="4" height="50" rx="2" fill="#c8a860" opacity=".6"/>
+            <ellipse cx="28" cy="-8" rx="14" ry="18" fill="none" stroke="#c8a860" stroke-width=".8" opacity=".6"/>
+            <line x1="28" y1="10" x2="28" y2="20" stroke="#c8a860" stroke-width=".8" opacity=".6"/>
+            <ellipse cx="28" cy="22" rx="10" ry="3" fill="none" stroke="#c8a860" stroke-width=".7" opacity=".5"/>
+          </g>
+          <!-- Candles -->
+          <g opacity=".7">
+            <rect x="130" y="68" width="7" height="30" rx="3" fill="#f5ede0" stroke="#d4b878" stroke-width=".7"/>
+            <ellipse cx="133.5" cy="66" rx="3" ry="6" fill="#f0c040" opacity=".8"/>
+            <rect x="280" y="60" width="8" height="40" rx="3.5" fill="#f5ede0" stroke="#d4b878" stroke-width=".7"/>
+            <ellipse cx="284" cy="58" rx="3.5" ry="7" fill="#f0c040" opacity=".8"/>
+            <rect x="430" y="65" width="7" height="32" rx="3" fill="#f5ede0" stroke="#d4b878" stroke-width=".7"/>
+            <ellipse cx="433.5" cy="63" rx="3" ry="6" fill="#f0c040" opacity=".8"/>
+          </g>
+          <!-- Greenery runner -->
+          <g opacity=".55">
+            <ellipse cx="140" cy="85" rx="25" ry="12" fill="#5a8040" transform="rotate(-15 140 85)"/>
+            <ellipse cx="165" cy="78" rx="20" ry="10" fill="#4a6e30" transform="rotate(-5 165 78)"/>
+            <ellipse cx="190" cy="82" rx="22" ry="11" fill="#6a9050" transform="rotate(-20 190 82)"/>
+            <ellipse cx="290" cy="75" rx="28" ry="13" fill="#5a8040" transform="rotate(10 290 75)"/>
+            <ellipse cx="320" cy="80" rx="22" ry="11" fill="#4a6e30" transform="rotate(5 320 80)"/>
+            <ellipse cx="440" cy="82" rx="25" ry="12" fill="#5a8040" transform="rotate(-8 440 82)"/>
+            <ellipse cx="465" cy="77" rx="18" ry="9" fill="#6a9050" transform="rotate(-18 465 77)"/>
+            <!-- Tiny flowers -->
+            <circle cx="155" cy="76" r="4" fill="#d4a5a0"/>
+            <circle cx="305" cy="73" r="4" fill="#d4a5a0"/>
+            <circle cx="455" cy="75" r="3.5" fill="#e8c4b8"/>
+          </g>
+        </svg>
+        <div class="mood-caption" data-en="Tablescape · Candlelit &amp; Green" data-ru="Сервировка · Свечи и зелень">Tablescape · Candlelit &amp; Green</div>
+      </div>
+
+      <!-- Bottom right: lanterns / evening -->
+      <div class="mood-item">
+        <svg viewBox="0 0 280 240" fill="none" aria-label="Evening lanterns">
+          <rect width="280" height="240" fill="#0e0c08"/>
+          <defs>
+            <radialGradient id="lanternG1" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#e8a820" stop-opacity=".9"/>
+              <stop offset="100%" stop-color="#e8a820" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="lanternG2" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#d4901a" stop-opacity=".8"/>
+              <stop offset="100%" stop-color="#d4901a" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="nightSky" cx="50%" cy="20%" r="80%">
+              <stop offset="0%" stop-color="#1a1428" stop-opacity=".9"/>
+              <stop offset="100%" stop-color="#0e0c08"/>
+            </radialGradient>
+          </defs>
+          <rect width="280" height="240" fill="url(#nightSky)"/>
+          <!-- Stars -->
+          <g opacity=".6" fill="white">
+            <circle cx="30" cy="20" r="1"/><circle cx="80" cy="35" r="1.2"/><circle cx="140" cy="15" r="1"/><circle cx="200" cy="28" r="1.3"/><circle cx="250" cy="18" r="1"/><circle cx="55" cy="50" r=".8"/><circle cx="185" cy="45" r=".9"/><circle cx="230" cy="55" r="1"/>
+          </g>
+          <!-- Tree silhouettes -->
+          <path d="M10 240 L10 120 Q10 90 25 70 Q40 50 30 30" stroke="#0a0805" stroke-width="8" fill="none"/>
+          <ellipse cx="28" cy="35" rx="20" ry="28" fill="#0a0805"/>
+          <path d="M260 240 L260 130 Q260 100 250 80 Q240 60 252 40" stroke="#0a0805" stroke-width="7" fill="none"/>
+          <ellipse cx="252" cy="44" rx="18" ry="24" fill="#0a0805"/>
+          <!-- Hanging string lights -->
+          <path d="M20 80 Q70 95 140 88 Q210 80 265 92" stroke="#c8a040" stroke-width=".8" fill="none" opacity=".5"/>
+          <path d="M20 100 Q70 115 140 108 Q210 100 265 112" stroke="#c8a040" stroke-width=".8" fill="none" opacity=".4"/>
+          <!-- Light bulbs -->
+          <g opacity=".8">
+            <ellipse cx="50" cy="96" rx="4" ry="5" fill="#f0c840"/>
+            <ellipse cx="50" cy="96" rx="10" ry="12" fill="#e8a820" opacity=".15"/>
+            <ellipse cx="100" cy="90" rx="4" ry="5" fill="#f0c840"/>
+            <ellipse cx="100" cy="90" rx="10" ry="12" fill="#e8a820" opacity=".15"/>
+            <ellipse cx="150" cy="88" rx="4" ry="5" fill="#f0c840"/>
+            <ellipse cx="150" cy="88" rx="10" ry="12" fill="#e8a820" opacity=".15"/>
+            <ellipse cx="200" cy="90" rx="4" ry="5" fill="#f0c840"/>
+            <ellipse cx="200" cy="90" rx="10" ry="12" fill="#e8a820" opacity=".15"/>
+            <ellipse cx="248" cy="96" rx="4" ry="5" fill="#f0c840"/>
+            <ellipse cx="248" cy="96" rx="10" ry="12" fill="#e8a820" opacity=".15"/>
+          </g>
+          <!-- Lanterns -->
+          <g transform="translate(90,145)">
+            <rect x="-15" y="-35" width="30" height="40" rx="4" fill="#c8803a" opacity=".9"/>
+            <rect x="-10" y="-30" width="20" height="30" rx="2" fill="#f0c040" opacity=".7"/>
+            <ellipse cx="0" cy="0" rx="30" ry="20" fill="url(#lanternG1)" opacity=".5"/>
+            <rect x="-5" y="-40" width="10" height="8" rx="2" fill="#8b5a28"/>
+            <line x1="0" y1="-48" x2="0" y2="-40" stroke="#8b5a28" stroke-width="1.5"/>
+          </g>
+          <g transform="translate(185,155)">
+            <rect x="-12" y="-28" width="24" height="32" rx="3" fill="#a06030" opacity=".9"/>
+            <rect x="-8" y="-24" width="16" height="24" rx="2" fill="#e8b030" opacity=".65"/>
+            <ellipse cx="0" cy="0" rx="24" ry="16" fill="url(#lanternG2)" opacity=".45"/>
+            <rect x="-4" y="-33" width="8" height="7" rx="2" fill="#7a4820"/>
+            <line x1="0" y1="-40" x2="0" y2="-33" stroke="#7a4820" stroke-width="1.2"/>
+          </g>
+          <!-- Warm ground glow -->
+          <ellipse cx="140" cy="230" rx="160" ry="40" fill="#c87820" opacity=".07"/>
+        </svg>
+        <div class="mood-caption" data-en="Evening · Lanterns &amp; String Lights" data-ru="Вечер · Фонарики и огни">Evening · Lanterns &amp; String Lights</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ COLOUR PALETTE ══ -->
+<section id="dresscode" class="palette-bg">
+  <div class="s-inner">
+    <p class="s-label reveal" data-en="Our Wedding Palette" data-ru="Палитра свадьбы">Our Wedding Palette</p>
+    <h2 class="s-title reveal rd1" data-en="Colour Scheme" data-ru="Цветовая схема">Colour <em>Scheme</em></h2>
+    <p class="s-body reveal rd2" data-en="Our palette draws from the valley itself — the warm gold of late afternoon light, the deep greens of the vines, soft blush of wildflowers, and the earthy warmth of aged timber." data-ru="Наша палитра вдохновлена самой долиной — тёплое золото послеполудня, глубокая зелень виноградников, нежный румянец полевых цветов и земляная теплота старого дерева.">Our palette draws from the valley itself — the warm gold of late afternoon light, the deep greens of the vines, soft blush of wildflowers, and the earthy warmth of aged timber.</p>
+    <div class="palette-grid reveal rd3">
+      <div class="palette-item">
+        <div class="palette-swatch" style="background:#b8964e"></div>
+        <p class="palette-name" data-en="Harvest Gold" data-ru="Золото урожая">Harvest Gold</p>
+        <p class="palette-hex">#B8964E</p>
+        <p class="palette-desc" data-en="Our accent — in stationery, ribbons & details" data-ru="Акцент — канцелярия, ленты, детали">Our accent — in stationery, ribbons &amp; details</p>
+      </div>
+      <div class="palette-item">
+        <div class="palette-swatch" style="background:#4a6e4e"></div>
+        <p class="palette-name" data-en="Forest" data-ru="Лес">Forest</p>
+        <p class="palette-hex">#4A6E4E</p>
+        <p class="palette-desc" data-en="Foliage, greenery, tablecloths" data-ru="Зелень, скатерти">Foliage, greenery, tablecloths</p>
+      </div>
+      <div class="palette-item">
+        <div class="palette-swatch" style="background:#a8c5aa"></div>
+        <p class="palette-name" data-en="Sage" data-ru="Шалфей">Sage</p>
+        <p class="palette-hex">#A8C5AA</p>
+        <p class="palette-desc" data-en="Bridesmaid dresses & soft accents" data-ru="Платья подружек и мягкие акценты">Bridesmaid dresses &amp; soft accents</p>
+      </div>
+      <div class="palette-item">
+        <div class="palette-swatch" style="background:#d4a5a0"></div>
+        <p class="palette-name" data-en="Wild Rose" data-ru="Дикая роза">Wild Rose</p>
+        <p class="palette-hex">#D4A5A0</p>
+        <p class="palette-desc" data-en="Florals & welcome for guests" data-ru="Цветы и акценты для гостей">Florals &amp; welcome for guests</p>
+      </div>
+      <div class="palette-item">
+        <div class="palette-swatch" style="background:#a07850"></div>
+        <p class="palette-name" data-en="Warm Timber" data-ru="Тёплое дерево">Warm Timber</p>
+        <p class="palette-hex">#A07850</p>
+        <p class="palette-desc" data-en="Architecture, venue tones" data-ru="Архитектура, интерьер">Architecture, venue tones</p>
+      </div>
+      <div class="palette-item">
+        <div class="palette-swatch" style="background:#f7f2e8"></div>
+        <p class="palette-name" data-en="Ivory" data-ru="Слоновая кость">Ivory</p>
+        <p class="palette-hex">#F7F2E8</p>
+        <p class="palette-desc" data-en="Bride, linens, candles" data-ru="Невеста, скатерти, свечи">Bride, linens, candles</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DRESS SILHOUETTES ══ -->
+<section class="dress-bg">
+  <div class="s-inner">
+    <p class="s-label reveal" data-en="What to Wear" data-ru="Что надеть">What to Wear</p>
+    <h2 class="s-title reveal rd1" data-en="Guest Dress Code" data-ru="Дресс-код гостей">Guest <em>Dress Code</em></h2>
+    <p class="dress-intro reveal rd2" data-en="We're going for Garden Formal — elegant enough for a special occasion, relaxed enough to dance. Think flowing fabrics, earthy tones, and florals. The ceremony is on grass, so stilettos are best left at home." data-ru="Наш стиль — Садовый формальный. Достаточно элегантно для особого случая, достаточно свободно, чтобы танцевать. Текучие ткани, земляные тона, цветочные принты. Церемония на траве, поэтому шпильки лучше оставить дома.">We're going for Garden Formal — elegant enough for a special occasion, relaxed enough to dance. Think flowing fabrics, earthy tones, and florals. The ceremony is on grass, so stilettos are best left at home.</p>
+
+    <div class="dress-grid reveal rd2">
+
+      <!-- A-Line -->
+      <div class="dress-card">
+        <svg viewBox="0 0 120 240" fill="none" aria-label="A-Line silhouette">
+          <!-- Head -->
+          <ellipse cx="60" cy="22" rx="14" ry="16" fill="#d4c0a8"/>
+          <!-- Neck -->
+          <rect x="55" y="36" width="10" height="8" rx="3" fill="#c8b098"/>
+          <!-- A-Line dress body -->
+          <path d="M42 44 Q60 40 78 44 L90 180 Q60 188 30 180 Z" fill="#a8c5aa"/>
+          <!-- Neckline -->
+          <path d="M42 44 Q60 52 78 44" stroke="#8aad8c" stroke-width="1.5" fill="none"/>
+          <!-- Waist detail -->
+          <path d="M38 90 Q60 96 82 90" stroke="#8aad8c" stroke-width="1" fill="none" opacity=".6"/>
+          <!-- Hair -->
+          <ellipse cx="60" cy="16" rx="15" ry="12" fill="#5a3e28"/>
+          <path d="M46 16 C42 22 40 35 42 44" stroke="#5a3e28" stroke-width="4" fill="none"/>
+          <path d="M74 16 C78 22 80 35 78 44" stroke="#5a3e28" stroke-width="4" fill="none"/>
+          <!-- Arms -->
+          <path d="M42 60 C30 70 26 90 28 100" stroke="#c8b098" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <path d="M78 60 C90 70 94 90 92 100" stroke="#c8b098" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <!-- Bouquet -->
+          <circle cx="92" cy="105" r="9" fill="#d4a5a0" opacity=".8"/>
+          <circle cx="87" cy="100" r="7" fill="#c9897a" opacity=".7"/>
+          <circle cx="96" cy="100" r="6" fill="#e8c4b8" opacity=".8"/>
+          <path d="M92 114 L92 126" stroke="#5a8040" stroke-width="2" stroke-linecap="round"/>
+          <ellipse cx="88" cy="124" rx="5" ry="3" fill="#5a8040" opacity=".6" transform="rotate(-20 88 124)"/>
+        </svg>
+        <p class="dress-card-name" data-en="A-Line" data-ru="А-силуэт">A-Line</p>
+        <p class="dress-card-sub" data-en="Classic & universally flattering" data-ru="Классика">Classic &amp; universally flattering</p>
+      </div>
+
+      <!-- Midi / Wrap -->
+      <div class="dress-card">
+        <svg viewBox="0 0 120 240" fill="none" aria-label="Midi wrap dress silhouette">
+          <ellipse cx="60" cy="22" rx="14" ry="16" fill="#d4c0a8"/>
+          <rect x="55" y="36" width="10" height="8" rx="3" fill="#c8b098"/>
+          <!-- Wrap dress -->
+          <path d="M44 44 Q60 40 76 44 L80 130 Q60 138 40 130 Z" fill="#d4a5a0"/>
+          <!-- Wrap detail -->
+          <path d="M60 44 L56 130" stroke="#c4958c" stroke-width="1.2" fill="none" opacity=".7"/>
+          <!-- Skirt flare -->
+          <path d="M40 130 Q30 165 25 190 L95 190 Q90 165 80 130" fill="#d4a5a0"/>
+          <path d="M40 130 Q28 160 22 190" stroke="#c4958c" stroke-width="1" fill="none" opacity=".5"/>
+          <!-- Belt -->
+          <rect x="38" y="108" width="44" height="6" rx="3" fill="#b8964e" opacity=".7"/>
+          <!-- Hair -->
+          <ellipse cx="60" cy="16" rx="15" ry="12" fill="#2a1f14"/>
+          <path d="M47 18 C44 24 42 36 44 44" stroke="#2a1f14" stroke-width="4" fill="none"/>
+          <path d="M73 18 C76 24 78 36 76 44" stroke="#2a1f14" stroke-width="4" fill="none"/>
+          <path d="M60 28 C55 40 50 60 48 80" stroke="#2a1f14" stroke-width="5" fill="none" opacity=".6"/>
+          <!-- Arms -->
+          <path d="M44 58 C33 68 30 86 32 96" stroke="#c8b098" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <path d="M76 58 C87 68 90 86 88 96" stroke="#c8b098" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <!-- Clutch -->
+          <rect x="24" y="90" width="22" height="14" rx="4" fill="#b8964e" opacity=".75"/>
+        </svg>
+        <p class="dress-card-name" data-en="Midi Wrap" data-ru="Миди-запах">Midi Wrap</p>
+        <p class="dress-card-sub" data-en="Elegant & easy to move in" data-ru="Элегантно и удобно">Elegant &amp; easy to move in</p>
+      </div>
+
+      <!-- Maxi / Column -->
+      <div class="dress-card">
+        <svg viewBox="0 0 120 240" fill="none" aria-label="Maxi dress silhouette">
+          <ellipse cx="60" cy="22" rx="14" ry="16" fill="#d4c0a8"/>
+          <rect x="55" y="36" width="10" height="8" rx="3" fill="#c8b098"/>
+          <!-- Column maxi -->
+          <path d="M45 44 Q60 38 75 44 L78 195 Q60 200 42 195 Z" fill="#c9a87c"/>
+          <!-- Slit suggestion -->
+          <path d="M78 150 L80 195 Q72 199 68 195 Z" fill="#f5ede0" opacity=".4"/>
+          <!-- Off-shoulder detail -->
+          <path d="M38 50 Q60 56 82 50" stroke="#b8964e" stroke-width="2" fill="none" opacity=".6"/>
+          <!-- Hair up -->
+          <ellipse cx="60" cy="14" rx="15" ry="10" fill="#3d2a18"/>
+          <ellipse cx="60" cy="10" rx="8" ry="6" fill="#3d2a18"/>
+          <!-- Neck/shoulder -->
+          <path d="M46 44 C40 50 36 60 38 65" stroke="#c8b098" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <path d="M74 44 C80 50 84 60 82 65" stroke="#c8b098" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <!-- Earring -->
+          <circle cx="46" cy="30" r="2" fill="#b8964e" opacity=".8"/>
+          <path d="M46 32 L46 40" stroke="#b8964e" stroke-width="1" opacity=".7"/>
+          <!-- Small bouquet wrist -->
+          <circle cx="82" cy="90" r="7" fill="#d4a5a0" opacity=".7"/>
+          <circle cx="78" cy="86" r="5" fill="#c9897a" opacity=".65"/>
+        </svg>
+        <p class="dress-card-name" data-en="Maxi / Column" data-ru="Макси / Колонна">Maxi / Column</p>
+        <p class="dress-card-sub" data-en="Timeless & glamorous" data-ru="Вне времени и гламурно">Timeless &amp; glamorous</p>
+      </div>
+
+      <!-- Smart Suit (men) -->
+      <div class="dress-card">
+        <svg viewBox="0 0 120 240" fill="none" aria-label="Smart suit silhouette">
+          <ellipse cx="60" cy="22" rx="13" ry="15" fill="#d4c0a8"/>
+          <rect x="56" y="35" width="8" height="10" rx="2" fill="#c8b098"/>
+          <!-- Suit jacket -->
+          <path d="M44 45 Q52 42 60 44 Q68 42 76 45 L82 140 Q60 148 38 140 Z" fill="#4a6e4e"/>
+          <!-- Lapels -->
+          <path d="M60 44 L52 65 L44 45" fill="#3d5a38"/>
+          <path d="M60 44 L68 65 L76 45" fill="#3d5a38"/>
+          <!-- Shirt / tie -->
+          <path d="M55 44 L60 80 L65 44" fill="#f5ede0" opacity=".9"/>
+          <path d="M60 48 L57 72 L60 78 L63 72 Z" fill="#b8964e" opacity=".8"/>
+          <!-- Trousers -->
+          <rect x="38" y="138" width="20" height="65" rx="4" fill="#3d5a38"/>
+          <rect x="62" y="138" width="20" height="65" rx="4" fill="#3d5a38"/>
+          <!-- Hair -->
+          <ellipse cx="60" cy="14" rx="14" ry="9" fill="#2a1f14"/>
+          <!-- Arms -->
+          <path d="M44 55 C34 68 32 88 34 102" stroke="#4a6e4e" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <path d="M76 55 C86 68 88 88 86 102" stroke="#4a6e4e" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <!-- Cuffs -->
+          <path d="M34 100 C30 104 32 110 35 110" stroke="#f5ede0" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <path d="M86 100 C90 104 88 110 85 110" stroke="#f5ede0" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <!-- Pocket square -->
+          <path d="M42 72 L50 72 L50 80 L42 76 Z" fill="#d4a5a0" opacity=".8"/>
+        </svg>
+        <p class="dress-card-name" data-en="Smart Suit" data-ru="Элегантный костюм">Smart Suit</p>
+        <p class="dress-card-sub" data-en="Sage, linen or warm tones" data-ru="Шалфей, лён или тёплые тона">Sage, linen or warm tones</p>
+      </div>
+
+    </div>
+
+    <div class="avoid-box reveal rd3">
+      <h4 data-en="Please avoid" data-ru="Пожалуйста, избегайте">Please avoid</h4>
+      <ul class="avoid-list">
+        <li data-en="White, ivory & champagne — reserved for the bride" data-ru="Белый, айвори и шампанское — для невесты">White, ivory &amp; champagne — reserved for the bride</li>
+        <li data-en="Black — opt for deep forest, navy or charcoal instead" data-ru="Чёрный — выбирайте тёмно-зелёный, синий или антрацит">Black — opt for deep forest, navy or charcoal instead</li>
+        <li data-en="Stiletto heels — ceremony and dancing are on grass" data-ru="Шпильки — церемония и танцы на траве">Stiletto heels — ceremony and dancing are on grass</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PACK LIST ══ -->
+<section class="pack-bg">
+  <div class="s-inner">
+    <p class="s-label reveal" data-en="Come Prepared" data-ru="Подготовьтесь">Come Prepared</p>
+    <h2 class="s-title reveal rd1" data-en="What to Pack" data-ru="Что взять с собой">What to <em>Pack</em></h2>
+    <p class="s-body reveal rd2" data-en="June in the Yarra Valley is beautiful but changeable. Here's what we suggest:" data-ru="Июнь в долине Ярра прекрасен, но переменчив. Вот что мы советуем взять:">June in the Yarra Valley is beautiful but changeable. Here's what we suggest:</p>
+    <div class="pack-cols reveal rd3">
+      <ul class="pack-list">
+        <li data-en="A warm jacket or wrap — evenings get chilly" data-ru="Тёплая куртка или палантин — вечера прохладные">A warm jacket or wrap — evenings get chilly</li>
+        <li data-en="Block heels, wedges or flats for the grass" data-ru="Устойчивые каблуки, танкетка или балетки">Block heels, wedges or flats for the grass</li>
+        <li data-en="Sunscreen & sunglasses for the afternoon ceremony" data-ru="Солнцезащитный крем и очки">Sunscreen &amp; sunglasses for the afternoon ceremony</li>
+        <li data-en="A small umbrella — June can bring light showers" data-ru="Маленький зонт — в июне бывают дожди">A small umbrella — June can bring light showers</li>
+      </ul>
+      <ul class="pack-list">
+        <li data-en="Overnight bag if staying on the estate" data-ru="Дорожная сумка, если остаётесь ночевать">Overnight bag if staying on the estate</li>
+        <li data-en="Camera — we'd love your candid shots" data-ru="Фотоаппарат — нам нужны ваши кадры">Camera — we'd love your candid shots</li>
+        <li data-en="Cash for optional winery tours Sunday" data-ru="Наличные для экскурсии на винодельню">Cash for optional winery tours Sunday</li>
+        <li data-en="Your very best dancing shoes" data-ru="Ваша лучшая обувь для танцев">Your very best dancing shoes</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══ LOCATION ══ -->
+<section id="location" class="location-bg">
+  <div class="s-inner">
+    <p class="s-label reveal" data-en="Getting There" data-ru="Как добраться">Getting There</p>
+    <h2 class="s-title reveal rd1" data-en="Location" data-ru="Место">Location</h2>
+    <div class="loc-grid">
+      <div class="reveal rd1">
+        <div class="loc-map">
+          <svg width="100%" height="100%" viewBox="0 0 400 300" fill="none" aria-label="Stylised map">
+            <rect width="400" height="300" fill="#ede6d3"/>
+            <defs>
+              <linearGradient id="mapGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#e0d4b8"/>
+                <stop offset="100%" stop-color="#f0e8d0"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="300" fill="url(#mapGrad)"/>
+            <!-- Roads -->
+            <path d="M0 150 Q100 140 200 150 Q300 160 400 148" stroke="#c8b878" stroke-width="10" fill="none" opacity=".4"/>
+            <path d="M0 150 Q100 140 200 150 Q300 160 400 148" stroke="#d4c890" stroke-width="6" fill="none" opacity=".5"/>
+            <path d="M200 0 Q195 100 200 150 Q205 210 200 300" stroke="#c8b878" stroke-width="8" fill="none" opacity=".35"/>
+            <path d="M200 0 Q195 100 200 150 Q205 210 200 300" stroke="#d4c890" stroke-width="5" fill="none" opacity=".4"/>
+            <path d="M0 80 Q100 90 200 150" stroke="#c8b878" stroke-width="5" fill="none" opacity=".25"/>
+            <path d="M400 230 Q300 220 200 150" stroke="#c8b878" stroke-width="5" fill="none" opacity=".25"/>
+            <!-- Green patches -->
+            <ellipse cx="80" cy="70" rx="40" ry="30" fill="#a8c5aa" opacity=".3"/>
+            <ellipse cx="320" cy="220" rx="50" ry="35" fill="#a8c5aa" opacity=".28"/>
+            <ellipse cx="50" cy="230" rx="35" ry="25" fill="#a8c5aa" opacity=".22"/>
+            <!-- Venue marker -->
+            <circle cx="200" cy="150" r="20" fill="#fdfaf4" stroke="#b8964e" stroke-width="2"/>
+            <circle cx="200" cy="150" r="12" fill="#b8964e" opacity=".9"/>
+            <circle cx="200" cy="150" r="5" fill="#fdfaf4"/>
+            <text x="200" y="182" text-anchor="middle" font-family="Jost,sans-serif" font-size="10" fill="#8a6a2a" letter-spacing="1.5" font-weight="300">ROSEWOOD ESTATE</text>
+            <!-- Tiny trees -->
+            <g opacity=".4" fill="#4a6e4e">
+              <ellipse cx="80" cy="65" rx="8" ry="10"/><ellipse cx="95" cy="70" rx="6" ry="8"/>
+              <ellipse cx="320" cy="215" rx="9" ry="11"/><ellipse cx="335" cy="222" rx="7" ry="9"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="reveal rd2">
+        <p class="loc-address">Rosewood Estate<br>123 Vineyard Lane<br>Yarra Valley, VIC 3770</p>
+        <div class="loc-section">
+          <h4 data-en="By Car" data-ru="На машине">By Car</h4>
+          <p data-en="About 1 hour from Melbourne CBD via the Maroondah Highway. Free on-site parking is available. We recommend carpooling where possible." data-ru="Около 1 часа от центра Мельбурна по шоссе Маруна. Бесплатная парковка. Рекомендуем ехать вместе.">About 1 hour from Melbourne CBD via the Maroondah Highway. Free on-site parking is available. We recommend carpooling where possible.</p>
+          <h4 data-en="Complimentary Shuttle" data-ru="Бесплатный шаттл">Complimentary Shuttle</h4>
+          <p data-en="Departs from [town/hotel] at 2:00 pm Saturday. Returns at midnight and 12:30 am. Please note your need on your RSVP." data-ru="Отправление из [город/отель] в 14:00 субботы. Возврат в полночь и 00:30. Укажите это в RSVP.">Departs from [town/hotel] at 2:00 pm Saturday. Returns at midnight and 12:30 am. Please note your need on your RSVP.</p>
+          <h4 data-en="By Train" data-ru="На поезде">By Train</h4>
+          <p data-en="Lilydale line to Lilydale Station, then a 25-minute taxi. We suggest pre-booking your return." data-ru="До станции Лилидейл, затем 25 минут на такси. Рекомендуем заранее забронировать обратную поездку.">Lilydale line to Lilydale Station, then a 25-minute taxi. We suggest pre-booking your return.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PHOTOS ══ -->
+<section id="photos" class="photos-bg">
+  <div class="s-wide">
+    <p class="s-label reveal">Sophie &amp; James</p>
+    <h2 class="s-title reveal rd1" data-en="Our Photos" data-ru="Наши фото"><em>Our Photos</em></h2>
+    <div class="photo-grid reveal rd2">
+      <div class="photo-item">
+        <div class="photo-ph" style="aspect-ratio:3/5">
+          <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 200 340" preserveAspectRatio="xMidYMid slice" fill="none">
+            <rect width="200" height="340" fill="#2a1f14"/>
+            <ellipse cx="100" cy="170" rx="90" ry="120" fill="#5a3e28" opacity=".4"/>
+            <ellipse cx="40" cy="80" rx="60" ry="70" fill="#4a6e4e" opacity=".25"/>
+            <ellipse cx="160" cy="280" rx="65" ry="75" fill="#8b4a30" opacity=".2"/>
+          </svg>
+          <span class="photo-ph-label" data-en="Add your photo" data-ru="Добавьте фото">Add your photo</span>
+        </div>
+      </div>
+      <div class="photo-item">
+        <div class="photo-ph">
+          <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 200 180" preserveAspectRatio="xMidYMid slice" fill="none">
+            <rect width="200" height="180" fill="#ede6d3"/>
+            <ellipse cx="80" cy="90" rx="75" ry="85" fill="#c9a87c" opacity=".3"/>
+            <ellipse cx="155" cy="45" rx="50" ry="55" fill="#a8c5aa" opacity=".25"/>
+          </svg>
+          <span class="photo-ph-label" data-en="Add your photo" data-ru="Добавьте фото">Add your photo</span>
+        </div>
+      </div>
+      <div class="photo-item">
+        <div class="photo-ph">
+          <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 200 180" preserveAspectRatio="xMidYMid slice" fill="none">
+            <rect width="200" height="180" fill="#2a1f14"/>
+            <ellipse cx="120" cy="90" rx="80" ry="75" fill="#8b4a30" opacity=".35"/>
+            <ellipse cx="40" cy="150" rx="45" ry="40" fill="#4a6e4e" opacity=".3"/>
+          </svg>
+          <span class="photo-ph-label" data-en="Add your photo" data-ru="Добавьте фото">Add your photo</span>
+        </div>
+      </div>
+      <div class="photo-item">
+        <div class="photo-ph" style="aspect-ratio:16/7">
+          <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 400 160" preserveAspectRatio="xMidYMid slice" fill="none">
+            <rect width="400" height="160" fill="#4a6e4e"/>
+            <ellipse cx="200" cy="80" rx="170" ry="80" fill="#6a9060" opacity=".35"/>
+            <ellipse cx="50" cy="50" rx="70" ry="55" fill="#c9a87c" opacity=".2"/>
+            <ellipse cx="360" cy="130" rx="70" ry="55" fill="#8b4a30" opacity=".2"/>
+          </svg>
+          <span class="photo-ph-label" data-en="Add your photo" data-ru="Добавьте фото">Add your photo</span>
+        </div>
+      </div>
+      <div class="photo-item">
+        <div class="photo-ph">
+          <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 200 180" preserveAspectRatio="xMidYMid slice" fill="none">
+            <rect width="200" height="180" fill="#f0e8d4"/>
+            <ellipse cx="100" cy="100" rx="85" ry="80" fill="#c9a87c" opacity=".3"/>
+            <ellipse cx="165" cy="38" rx="50" ry="42" fill="#d4a5a0" opacity=".3"/>
+          </svg>
+          <span class="photo-ph-label" data-en="Add your photo" data-ru="Добавьте фото">Add your photo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ACCOMMODATION ══ -->
+<section id="stay" class="accom-bg">
+  <div class="s-wide">
+    <p class="s-label reveal" data-en="Make a Weekend of It" data-ru="Останьтесь на выходные">Make a Weekend of It</p>
+    <h2 class="s-title reveal rd1" data-en="Where to Stay" data-ru="Где остановиться">Where to <em>Stay</em></h2>
+    <p class="s-body reveal rd2" data-en="A selection of our favourite places to rest near the estate. We recommend booking as soon as possible." data-ru="Подборка наших любимых мест для отдыха рядом с поместьем. Рекомендуем бронировать как можно скорее.">A selection of our favourite places to rest near the estate. We recommend booking as soon as possible.</p>
+    <div class="accom-grid reveal rd3">
+      <div class="accom-card">
+        <div class="accom-img" style="background:linear-gradient(135deg,#a8c5aa,#6b8f6e)">
+          <svg width="180" height="100" viewBox="0 0 180 100" fill="none" aria-hidden="true">
+            <rect x="25" y="35" width="130" height="55" rx="2" fill="#4a6e4e" opacity=".5"/>
+            <path d="M15 35 L90 10 L165 35" fill="#3d5a38" opacity=".6"/>
+            <rect x="70" y="55" width="18" height="35" fill="#2a3e20" opacity=".6"/>
+            <rect x="30" y="48" width="26" height="20" rx="1" fill="rgba(255,255,255,.3)"/>
+            <rect x="124" y="48" width="26" height="20" rx="1" fill="rgba(255,255,255,.3)"/>
+          </svg>
+        </div>
+        <div class="accom-body">
+          <p class="accom-type" data-en="On-site · Recommended" data-ru="На территории · Рекомендуем">On-site · Recommended</p>
+          <p class="accom-name" data-en="Rosewood Estate Cottages" data-ru="Коттеджи Розвуд">Rosewood Estate Cottages</p>
+          <p class="accom-desc" data-en="Six private garden cottages right on the property. Steps from all events, beautifully appointed." data-ru="Шесть уютных коттеджей прямо на территории. Шаговая доступность ко всем мероприятиям.">Six private garden cottages right on the property. Steps from all events, beautifully appointed.</p>
+          <p class="accom-dist" data-en="On-site · Book via your RSVP" data-ru="На территории · Бронировать через RSVP">On-site · Book via your RSVP</p>
+        </div>
+      </div>
+      <div class="accom-card">
+        <div class="accom-img" style="background:linear-gradient(135deg,#f0e0cc,#d4b890)">
+          <svg width="180" height="100" viewBox="0 0 180 100" fill="none" aria-hidden="true">
+            <rect x="20" y="38" width="140" height="52" rx="3" fill="#c9a87c" opacity=".55"/>
+            <path d="M10 38 L90 12 L170 38" fill="#a07850" opacity=".5"/>
+            <rect x="72" y="58" width="16" height="32" fill="#7a5a30" opacity=".55"/>
+            <rect x="25" y="48" width="30" height="22" rx="1" fill="rgba(255,255,255,.35)"/>
+            <rect x="125" y="48" width="30" height="22" rx="1" fill="rgba(255,255,255,.35)"/>
+          </svg>
+        </div>
+        <div class="accom-body">
+          <p class="accom-type" data-en="B&amp;B · 5 min drive" data-ru="B&amp;B · 5 минут">B&amp;B · 5 min drive</p>
+          <p class="accom-name">The Wanderer's Rest</p>
+          <p class="accom-desc" data-en="Heritage B&amp;B with full cooked breakfast. Charming hosts who know every corner of the valley." data-ru="Исторический B&amp;B с полным завтраком. Гостеприимные хозяева, знающие каждый уголок долины.">Heritage B&amp;B with full cooked breakfast. Charming hosts who know every corner of the valley.</p>
+          <p class="accom-dist" data-en="5 min drive · From $180/night" data-ru="5 минут · от $180/ночь">5 min drive · From $180/night</p>
+        </div>
+      </div>
+      <div class="accom-card">
+        <div class="accom-img" style="background:linear-gradient(135deg,#c8dfc8,#8aad8c)">
+          <svg width="180" height="100" viewBox="0 0 180 100" fill="none" aria-hidden="true">
+            <path d="M10 80 Q45 65 90 72 Q135 79 170 68" stroke="#4a6e4e" stroke-width="3" fill="none" opacity=".6"/>
+            <path d="M10 90 Q45 75 90 82 Q135 89 170 78" stroke="#4a6e4e" stroke-width="2.5" fill="none" opacity=".5"/>
+            <path d="M10 70 Q45 55 90 62 Q135 69 170 58" stroke="#5a8040" stroke-width="2" fill="none" opacity=".4"/>
+            <rect x="65" y="25" width="50" height="38" rx="2" fill="#3d5a38" opacity=".4"/>
+            <path d="M58 25 L90 8 L122 25" fill="#3d5a38" opacity=".45"/>
+          </svg>
+        </div>
+        <div class="accom-body">
+          <p class="accom-type" data-en="Vineyard Stay · 10 min" data-ru="Виноградник · 10 минут">Vineyard Stay · 10 min</p>
+          <p class="accom-name">Harvest Moon Vineyard</p>
+          <p class="accom-desc" data-en="Wake up among the vines. Valley-view suites and complimentary wine tasting included." data-ru="Просыпайтесь среди виноградников. Номера с видом на долину и бесплатная дегустация вин.">Wake up among the vines. Valley-view suites and complimentary wine tasting included.</p>
+          <p class="accom-dist" data-en="10 min drive · From $260/night" data-ru="10 минут · от $260/ночь">10 min drive · From $260/night</p>
+        </div>
+      </div>
+      <div class="accom-card">
+        <div class="accom-img" style="background:linear-gradient(135deg,#e8e0d0,#d4c8b0)">
+          <svg width="180" height="100" viewBox="0 0 180 100" fill="none" aria-hidden="true">
+            <rect x="30" y="18" width="120" height="72" rx="2" fill="#c9b898" opacity=".6"/>
+            <rect x="30" y="18" width="120" height="12" fill="#a8c5aa" opacity=".5"/>
+            <rect x="42" y="38" width="16" height="14" rx="1" fill="rgba(255,255,255,.5)"/>
+            <rect x="70" y="38" width="16" height="14" rx="1" fill="rgba(255,255,255,.5)"/>
+            <rect x="98" y="38" width="16" height="14" rx="1" fill="rgba(255,255,255,.5)"/>
+            <rect x="126" y="38" width="16" height="14" rx="1" fill="rgba(255,255,255,.5)"/>
+            <rect x="42" y="60" width="16" height="14" rx="1" fill="rgba(255,255,255,.5)"/>
+            <rect x="70" y="60" width="16" height="14" rx="1" fill="rgba(255,255,255,.5)"/>
+            <rect x="98" y="60" width="16" height="14" rx="1" fill="rgba(255,255,255,.5)"/>
+            <rect x="126" y="60" width="16" height="14" rx="1" fill="rgba(255,255,255,.5)"/>
+          </svg>
+        </div>
+        <div class="accom-body">
+          <p class="accom-type" data-en="Hotel · 20 min drive" data-ru="Отель · 20 минут">Hotel · 20 min drive</p>
+          <p class="accom-name">The Yarra Grand Hotel</p>
+          <p class="accom-desc" data-en="Classic valley hotel with pool, restaurant and spa. Perfect for families or those wanting a little luxury." data-ru="Классический отель с бассейном, рестораном и спа. Идеально для семей или тех, кто хочет роскоши.">Classic valley hotel with pool, restaurant and spa. Perfect for families or those wanting a little luxury.</p>
+          <p class="accom-dist" data-en="20 min drive · From $210/night" data-ru="20 минут · от $210/ночь">20 min drive · From $210/night</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="ft-inner">
+    <svg width="80" height="60" viewBox="0 0 80 60" fill="none" style="margin:0 auto 2.5rem;display:block" aria-hidden="true">
+      <path d="M40 55 C40 55 22 38 14 22 C10 14 14 4 22 5 C28 6 30 14 28 22" stroke="#b8964e" stroke-width="1.2" fill="none" opacity=".6"/>
+      <path d="M40 55 C40 55 58 38 66 22 C70 14 66 4 58 5 C52 6 50 14 52 22" stroke="#b8964e" stroke-width="1.2" fill="none" opacity=".6"/>
+      <path d="M40 55 L40 5" stroke="#8a6a2a" stroke-width=".8" fill="none" opacity=".5"/>
+      <circle cx="40" cy="4" r="3" fill="#d4b078" opacity=".7"/>
+      <ellipse cx="20" cy="16" rx="10" ry="6" fill="#b8964e" opacity=".35" transform="rotate(-25 20 16)"/>
+      <ellipse cx="60" cy="16" rx="10" ry="6" fill="#b8964e" opacity=".35" transform="rotate(25 60 16)"/>
+      <ellipse cx="14" cy="30" rx="8" ry="5" fill="#a8c5aa" opacity=".4" transform="rotate(-15 14 30)"/>
+      <ellipse cx="66" cy="30" rx="8" ry="5" fill="#a8c5aa" opacity=".4" transform="rotate(15 66 30)"/>
+    </svg>
+    <p class="ft-mono" data-en="Sophie & James" data-ru="Софи и Джеймс">Sophie &amp; James</p>
+    <p class="ft-names">Sophie <em style="font-style:normal;color:var(--gold-light)">&amp;</em> James</p>
+    <p class="ft-date" data-en="14 June 2025 · Rosewood Estate · Yarra Valley" data-ru="14 июня 2025 · Поместье Розвуд · Долина Ярра">14 June 2025 · Rosewood Estate · Yarra Valley</p>
+    <p class="ft-note" data-en="We cannot wait to celebrate with you. With all our love." data-ru="Мы с нетерпением ждём встречи с вами. С любовью.">We cannot wait to celebrate with you.<br>With all our love.</p>
+    <p class="ft-contact" data-en="Questions? Contact [Name] · [email] · [phone]" data-ru="Вопросы? Пишите [Имя] · [email] · [телефон]">Questions? Contact [Name] · [email] · [phone]</p>
+  </div>
+</footer>
+
+<script>
+// ── COUNTDOWN ──
+function updateCountdown() {
+  const wedding = new Date('2025-06-14T15:00:00+10:00');
+  const now = new Date();
+  const diff = wedding - now;
+  if (diff <= 0) {
+    document.getElementById('cd-d').textContent = '00';
+    document.getElementById('cd-h').textContent = '00';
+    document.getElementById('cd-m').textContent = '00';
+    document.getElementById('cd-s').textContent = '00';
+    return;
+  }
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  document.getElementById('cd-d').textContent = String(d).padStart(2,'0');
+  document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
+  document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
+  document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// ── LANGUAGE ──
+let lang = 'en';
+function toggleLang() {
+  lang = lang === 'en' ? 'ru' : 'en';
+  document.querySelectorAll('[data-en][data-ru]').forEach(el => {
+    const val = lang === 'ru' ? el.getAttribute('data-ru') : el.getAttribute('data-en');
+    if (el.children.length === 0) el.textContent = val;
+    else el.innerHTML = val;
+  });
+  document.getElementById('langFlag').textContent = lang === 'ru' ? '🇬🇧' : '🇷🇺';
+  document.getElementById('langLabel').textContent = lang === 'ru' ? 'EN' : 'RU';
+  document.documentElement.lang = lang;
+}
+
+// ── REVEAL ──
+const reveals = document.querySelectorAll('.reveal');
+new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin:'0px 0px -40px 0px' }).observe
+? (() => {
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin:'0px 0px -40px 0px' });
+  reveals.forEach(r => obs.observe(r));
+})() : reveals.forEach(r => r.classList.add('visible'));
+
+// ── NAV HIGHLIGHT ──
+const secs = document.querySelectorAll('section[id]');
+const navAs = document.querySelectorAll('nav a');
+new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting) navAs.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#'+e.target.id ? 'var(--gold)' : '';
+    });
+  });
+},{ threshold:0.4 }).observe
+? (() => {
+  const so = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting) navAs.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#'+e.target.id ? 'var(--gold)' : '';
+      });
+    });
+  },{threshold:0.4});
+  secs.forEach(s => so.observe(s));
+})() : null;
+</script>
+</body>
+</html>
