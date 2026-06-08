@@ -55,22 +55,62 @@ nav a:hover,nav a.active{color:var(--gold)}
 .places-bg{background:rgba(247,242,232,.86);backdrop-filter:blur(8px);padding:8rem 2rem}
 .closing-note-bg{background:transparent;padding:5rem 2rem 4rem}
 
-/* VIDEO HERO */
-.video-hero{position:relative;width:100%;height:100vh;min-height:560px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#0a0d08;text-align:center}
-.video-hero__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:brightness(.82) saturate(.9)}
-.video-hero__bg-anim{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 20% 30%,rgba(58,100,50,.55) 0%,transparent 60%),radial-gradient(ellipse 70% 50% at 80% 70%,rgba(40,70,100,.5) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 50% 50%,rgba(100,70,30,.3) 0%,transparent 65%),#0a0d08;animation:bgShift 12s ease-in-out infinite alternate}
-@keyframes bgShift{0%{filter:hue-rotate(0deg) brightness(1)}50%{filter:hue-rotate(8deg) brightness(1.08)}100%{filter:hue-rotate(-5deg) brightness(.96)}}
-.video-hero__overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(5,8,4,.3) 0%,rgba(5,8,4,.05) 40%,rgba(5,8,4,.5) 100%);pointer-events:none;z-index:1}
-.video-hero__content{position:relative;z-index:2;text-align:center;display:flex;flex-direction:column;align-items:center;gap:.6rem;padding:0 2rem;width:100%;max-width:800px;margin:0 auto}
-.vh-label{font-family:'Jost',sans-serif;font-size:.62rem;font-weight:200;letter-spacing:.52em;text-transform:uppercase;color:rgba(255,255,255,.8);margin:0 0 .4rem;animation:fadeUp 1.2s ease both}
-.vh-names{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,7vw,5.8rem);font-weight:300;font-style:italic;color:rgba(255,250,235,.96);letter-spacing:.04em;line-height:1.05;margin:0;text-shadow:0 2px 32px rgba(0,0,0,.45);animation:fadeUp 1.2s ease .15s both}
-.vh-rule{width:80px;height:1px;background:rgba(255,255,255,.4);margin:.8rem auto;animation:fadeUp 1.2s ease .3s both}
-.vh-date{font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,2.2vw,1.4rem);font-weight:300;letter-spacing:.18em;color:rgba(255,248,225,.88);margin:0;animation:fadeUp 1.2s ease .42s both}
-.vh-location{font-family:'Jost',sans-serif;font-size:.62rem;font-weight:200;letter-spacing:.38em;text-transform:uppercase;color:rgba(255,255,255,.72);margin:.1rem 0 0;animation:fadeUp 1.2s ease .55s both}
-.vh-scroll{position:absolute;bottom:1.8rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;z-index:10;animation:fadeUp 2s ease 1.2s both;pointer-events:none}
-.vh-scroll span{font-family:'Jost',sans-serif;font-size:.48rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.38)}
-.vh-scroll-line{width:1px;height:44px;background:linear-gradient(to bottom,rgba(184,150,78,.5),transparent);animation:scrollPulse 2.5s ease-in-out infinite}
 
+  /* VIDEO HERO */
+.video-hero{
+    position:relative;
+    width:100%;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#0a0d08;
+    text-align:center;
+}
+
+/* VIDEO (natural size, responsive width) */
+.video-hero__bg{
+    display:block;
+    width:100%;
+    height:auto;
+    object-fit:unset;
+}
+
+/* REMOVE full-screen overlay positioning still works */
+.video-hero__bg-anim{
+    position:absolute;
+    inset:0;
+    background:radial-gradient(ellipse 80% 60% at 20% 30%,rgba(58,100,50,.55) 0%,transparent 60%),
+               radial-gradient(ellipse 70% 50% at 80% 70%,rgba(40,70,100,.5) 0%,transparent 60%),
+               radial-gradient(ellipse 60% 50% at 50% 50%,rgba(100,70,30,.3) 0%,transparent 65%),
+               #0a0d08;
+    animation:bgShift 12s ease-in-out infinite alternate;
+    z-index:0;
+}
+
+/* overlay stays above video */
+.video-hero__overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to bottom,rgba(5,8,4,.3) 0%,rgba(5,8,4,.05) 40%,rgba(5,8,4,.5) 100%);
+    pointer-events:none;
+    z-index:1;
+}
+
+.video-hero__content{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:.6rem;
+    padding:0 2rem;
+    width:100%;
+    max-width:800px;
+    margin:0 auto;
+}
+  
 /* HERO (painting) */
 .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;background:var(--cream);padding:7rem 2rem 4rem}
 .hero-bg-texture{position:absolute;inset:0;z-index:0}
