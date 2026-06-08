@@ -59,7 +59,7 @@ nav a:hover,nav a.active{color:var(--gold)}
   /* VIDEO HERO */
 .video-hero{
     position:relative;
-    width:100%;
+    width:100vw;
     overflow:hidden;
     display:flex;
     align-items:center;
@@ -68,12 +68,12 @@ nav a:hover,nav a.active{color:var(--gold)}
     text-align:center;
 }
 
-/* VIDEO (natural size, responsive width) */
+/* IMPORTANT: force true full-width video */
 .video-hero__bg{
-    display:block;
-    width:100%;
+    width:100vw;
+    max-width:100%;
     height:auto;
-    object-fit:unset;
+    display:block;
 }
 
 /* REMOVE full-screen overlay positioning still works */
